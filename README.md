@@ -85,6 +85,24 @@ Cuando la VM levanta, muestra las URLs y credenciales necesarias para el acceso 
 
 En la VM se dispone de la herramienta WP-CLI bajo el nombre `wp`.
 
+Como siempre en el caso de Vagrant, se puede ingresar mediante SSH con el mandato:
+
+```bash
+vagrant ssh
+```
+
+Para detener la VM:
+
+```bash
+vagrant halt
+```
+
+y para destruirla por completo:
+
+```bash
+vagrant destroy -f
+```
+
 
 # Referencias
 
