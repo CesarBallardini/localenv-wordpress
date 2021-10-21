@@ -32,7 +32,7 @@ git clone https://github.com/CesarBallardini/localenv-wordpress
 
 Configure si desea otros valores diferentes a los provistos.  Puede dejar todo sin modificar y el sistema será completamente funcional.
 
-* `Vagrantfile`
+* `Vagrantfile` (estas variables identifican el dominio y las credenciales de la cuenta Wordpress con privilegios administrativos)
 
 ```ruby
 HOSTNAME = "wpdev"
@@ -44,7 +44,7 @@ WP_ADMIN_PASSWORD="admin"
 WP_ADMIN_EMAIL="no@spam.org"
 ```
 
-* `provision/vars.sh`
+* `provision/vars.sh` (no debería ser necesario cambiar nada aquí para una VM de desarrollo o staging)
 
 ```bash
 export WP_PATH="/var/www/wordpress"
