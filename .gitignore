@@ -1,0 +1,4 @@
+.vagrant/
+tmp/
+.git/
+provision/ansible/roles/
