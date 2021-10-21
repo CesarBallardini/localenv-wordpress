@@ -36,7 +36,6 @@ git clone https://github.com/CesarBallardini/localenv-wordpress
 * Configure si desea otros valores diferentes a los provistos.  Puede dejar todo sin modificar y el sistema será completamente funcional.
 
   * `Vagrantfile`
-
 ```ruby
 HOSTNAME = "wpdev"
 HOST_IP_ADDRESS="192.168.56.10"
@@ -46,9 +45,7 @@ WP_ADMIN_USERNAME="admin"
 WP_ADMIN_PASSWORD="admin"
 WP_ADMIN_EMAIL="no@spam.org"
 ```
-
   * `provision/vars.sh`
-
 ```bash
 export WP_PATH="/var/www/wordpress"
 
@@ -64,12 +61,9 @@ export MYSQL_ROOT_PASSWORD="root"
 PHP_VERSION=7.4
 
 ```
-
 Es muy importante que la versión de PHP instalada en la VM (mayor.minor) se indique en la variable `PHP_VERSION`. 
 En el caso de Ubuntu 20.04 LTS se corresponde con la 7.4.
-
   * `/etc/hosts` indique la asociación entre la dirección IP y el nombre de la VM, y el fqdn de la misma
-
 ```text
 192.168.56.10	wpdev
 192.168.56.10	wpdev.virtual.ballardini.com.ar
