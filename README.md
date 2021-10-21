@@ -11,12 +11,9 @@ y el aprovisionamiento se realiza con _scripts_ de _shell_ que residen en el dir
 
 * Plugins para Vagrant:
 
-  * vagrant-cachier (1.2.1)
-  * vagrant-disksize (0.1.3)
-  * vagrant-hostmanager (1.8.9)
-  * vagrant-mutate (1.2.0)
-  * vagrant-proxyconf (2.0.10)
-  * vagrant-rekey-ssh (0.1.9)
+  * vagrant-cachier (1.2.1) (caché de paquetes DEB, etc.)
+  * vagrant-hostmanager (1.8.9) (para modificar automáticamente el `/etc/hosts` en VM y _host_)
+  * vagrant-proxyconf (2.0.10) (si debe salir a internet a través de un _proxy_ corporativo)
   * vagrant-reload (0.0.1)
   * vagrant-share (2.0.0)
   * vagrant-vbguest (0.30.0)
