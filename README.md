@@ -64,7 +64,7 @@ PHP_VERSION=7.4
 Es muy importante que la versión de PHP instalada en la VM (mayor.minor) se indique en la variable `PHP_VERSION`. 
 En el caso de Ubuntu 20.04 LTS se corresponde con la 7.4.
 
-* `/etc/hosts` indique la asociación entre la dirección IP y el nombre de la VM, y el fqdn de la misma
+* `/etc/hosts` indique la asociación entre la dirección IP y el nombre de la VM, y el fqdn de la misma.  Si tiene instalado el plugin `vagrant-hostmanager`, esta tarea se hace automáticamente.
 
 ```text
 192.168.56.10	wpdev
