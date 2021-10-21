@@ -82,6 +82,10 @@ Esto va a crear una VM con Ubuntu 20.04 llamada `wpdev` con dirección IP 192.16
 desde la pc o notebook que aloja el Virtualbox.
 
 Cuando la VM levanta, muestra las URLs y credenciales necesarias para el acceso de lectura del blog y para el _login_ con la cuenta privilegiada de administración.
+Si usa los valores provistos aquí, las URL serán:
+
+* http://wpdev.virtual.ballardini.com.ar/ lectura del blog
+* http://wpdev.virtual.ballardini.com.ar/wp-login.php acceso con credenciales `admin / admin` para la cuenta privilegiada de administración Wordpress.
 
 En la VM se dispone de la herramienta WP-CLI bajo el nombre `wp`.
 
