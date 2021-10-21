@@ -8,6 +8,19 @@ y el aprovisionamiento se realiza con _scripts_ de _shell_ que residen en el dir
 # Requisitos
 
 * Vagrant (verificado con 2.2.18)
+
+* Plugins para Vagrant:
+
+  * vagrant-cachier (1.2.1)
+  * vagrant-disksize (0.1.3)
+  * vagrant-hostmanager (1.8.9)
+  * vagrant-mutate (1.2.0)
+  * vagrant-proxyconf (2.0.10)
+  * vagrant-rekey-ssh (0.1.9)
+  * vagrant-reload (0.0.1)
+  * vagrant-share (2.0.0)
+  * vagrant-vbguest (0.30.0)
+
 * Virtualbox (verificado con 6.1.28r147628)
 
 # Cómo usar este repositorio
