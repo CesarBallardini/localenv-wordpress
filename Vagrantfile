@@ -45,7 +45,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       config.cache.scope = :box
 
       config.cache.synced_folder_opts = {
-        owner: "_apt"
+        owner: "_apt",
+        group: "_apt",
+        # group: "vagrant",
+        mount_options: ["dmode=777", "fmode=666"]
       }
 
       # For more information please check http://docs.vagrantup.com/v2/synced-folders/basic_usage.html
