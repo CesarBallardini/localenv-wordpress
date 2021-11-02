@@ -62,6 +62,11 @@ instala_wp_cli() {
   echo "source /usr/local/etc/bash_completion.d/wp-completion.bash" | tee --append ~/.bash_profile
 
   source ~/.bash_profile
+
+  WP_CLI_DIR=$(dirname $(echo $WP_PATH )/.wp-cli)
+  sudo mkdir -p $WP_CLI_DIR/cache/
+  sudo chown -R www-data:www-data $WP_CLI_DIR
+
 }
 
 
