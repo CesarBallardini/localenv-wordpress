@@ -15,10 +15,11 @@ y el aprovisionamiento se realiza con _scripts_ de _shell_ que residen en el dir
   * vagrant-hostmanager (1.8.9) (para modificar automáticamente el `/etc/hosts` en VM y _host_)
   * vagrant-proxyconf (2.0.10) (si debe salir a internet a través de un _proxy_ corporativo)
   * vagrant-reload (0.0.1)
-  * vagrant-share (2.0.0)
   * vagrant-vbguest (0.30.0)
 
 * Virtualbox (verificado con 6.1.28r147628)
+
+* Git (verificado con 2.25.1)
 
 # Cómo usar este repositorio
 
@@ -106,7 +107,6 @@ y para destruirla por completo:
 ```bash
 vagrant destroy -f
 ```
-
 
 # Referencias
 
