@@ -116,3 +116,12 @@ vagrant destroy -f
 
 * https://peteris.rocks/blog/unattended-installation-of-wordpress-on-ubuntu-server/ los _scripts_ están basados en este material.
 
+* https://developers.google.com/speed/pagespeed/insights/ herramienta de Google para averiguar datos de navegación de tus páginas
+
+* Reduce el tamaño de las imágenes
+  * https://tinypng.com/
+  * https://tinyjpg.com/
+
+* Wordpress cache plugins:  TODO: revisar!
+  * https://wordpress.org/plugins/wp-fastest-cache/
+  * https://wordpress.org/plugins/wp-super-cache/
