@@ -70,7 +70,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     srv.vm.hostname = HOSTNAME
 
     if Vagrant.has_plugin?("vagrant-hostmanager")
-      srv.hostmanager.aliases = %W(#{HOSTNAME+".virtual.ballardini.com.ar"} #{HOSTNAME} )
+      srv.hostmanager.aliases = %W(#{HOSTNAME+".virtual.ballardini.com.ar"})
     end
 
     srv.vm.provider :virtualbox do |vb|
