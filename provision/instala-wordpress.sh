@@ -33,7 +33,20 @@ instala_wordpress() {
 }
 
 
-configura_instalacion() {
+configura_instalacion_ssl() {
+
+  curl "https://$WP_DOMAIN/wp-admin/install.php?step=2" \
+    --insecure \
+    --data-urlencode "weblog_title=$WP_DOMAIN"\
+    --data-urlencode "user_name=$WP_ADMIN_USERNAME" \
+    --data-urlencode "admin_email=$WP_ADMIN_EMAIL" \
+    --data-urlencode "admin_password=$WP_ADMIN_PASSWORD" \
+    --data-urlencode "admin_password2=$WP_ADMIN_PASSWORD" \
+    --data-urlencode "pw_weak=1"
+}
+
+
+configura_instalacion_no_ssl() {
 
   curl "http://$WP_DOMAIN/wp-admin/install.php?step=2" \
     --data-urlencode "weblog_title=$WP_DOMAIN"\
@@ -70,9 +83,10 @@ instala_wp_cli() {
 }
 
 
-## main
 # https://peteris.rocks/blog/unattended-installation-of-wordpress-on-ubuntu-server/
-
+## main
+#
 instala_wordpress
-configura_instalacion
+#configura_instalacion_no_ssl
+configura_instalacion_ssl
 instala_wp_cli

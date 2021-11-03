@@ -25,7 +25,7 @@ y el aprovisionamiento se realiza con _scripts_ de _shell_ que residen en el dir
 
 * Asegúrese de instalar los requisitos
 
-* clone el repo
+* clone el repo:
 
 ```bash
 git clone https://github.com/CesarBallardini/localenv-wordpress
@@ -65,6 +65,42 @@ PHP_VERSION=7.4
 Es muy importante que la versión de PHP instalada en la VM (mayor.minor) se indique en la variable `PHP_VERSION`. 
 En el caso de Ubuntu 20.04 LTS se corresponde con la 7.4.
 
+## HTTP / HTTPS -- Self Signed / LetsEncrypt
+
+
+Existen dos opciones de protocolo para el sitio Web:
+ * HTTP escucha en puerto 80
+ * HTTPS escucha en puerto 443 con certificados SSL autofirmados (el navegador le mostrará un mensaje de aviso que el certificado no es de confiar; acéptelo)
+
+Estos cambios se pueden hacer modificando el archivo `provision/instala-php-nginx.sh` que al final muestra:
+
+```bash
+##
+# main
+#
+
+#instala_no_ssl
+instala_ssl_selfsigned
+#instala_ssl_letsencrypt
+```
+
+descomente sólo la opción de instalación que desee; la que está descomentada al momento es `instala_ssl_selfsigned`.
+
+Y para la configuración de Wordpress, en `provision/instala-wordpress.sh` al final muestra:
+
+```bash
+## main
+#
+instala_wordpress
+#configura_instalacion_no_ssl
+configura_instalacion_ssl
+instala_wp_cli
+```
+
+donde se ve que de manera inicial se usa la configuración para HTTPS.
+
+## Asegurar que `/etc/hosts` tiene asociado el nombre de dominio de la instalación Wordpress
+
 * `/etc/hosts` indique la asociación entre la dirección IP y el nombre de la VM, y el fqdn de la misma.  Si tiene instalado el plugin `vagrant-hostmanager`, esta tarea se hace automáticamente.
 
 ```text
@@ -72,7 +108,9 @@ En el caso de Ubuntu 20.04 LTS se corresponde con la 7.4.
 192.168.56.10	wpdev.virtual.ballardini.com.ar
 ```
 
-* levante la VM
+## Gestionar el ciclo de vida de la VM
+
+* levante la VM:
 
 ```bash
 cd localenv-wordpress/
