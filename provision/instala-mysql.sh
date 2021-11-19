@@ -10,6 +10,7 @@ echo "mysql-server-5.7 mysql-server/root_password password $MYSQL_ROOT_PASSWORD"
 echo "mysql-server-5.7 mysql-server/root_password_again password $MYSQL_ROOT_PASSWORD" | sudo debconf-set-selections
 
 sudo apt-get install mysql-server ${APT_OPTIONS}
+sudo service mysql start
 
 
 mysql -u root -p$MYSQL_ROOT_PASSWORD <<EOF

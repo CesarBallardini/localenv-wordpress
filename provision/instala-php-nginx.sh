@@ -255,12 +255,14 @@ EOF
 instala_no_ssl() {
   instala_paquetes
   configura_nginx_no_ssl
+  sudo service php7.4-fpm restart
 }
 
 
 instala_ssl_selfsigned() {
   instala_paquetes
   configura_nginx_ssl_selfsigned
+  sudo service php7.4-fpm restart
 }
 
 
@@ -268,6 +270,7 @@ instala_ssl_letsencrypt() {
   instala_paquetes
   #configura_nginx_ssl_letsencrypt
   #asegura_certificado_no_se_vence
+  sudo service php7.4-fpm restart
 }
 
 ##

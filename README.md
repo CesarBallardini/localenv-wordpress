@@ -17,7 +17,7 @@ y el aprovisionamiento se realiza con _scripts_ de _shell_ que residen en el dir
   * vagrant-reload (0.0.1)
   * vagrant-vbguest (0.30.0)
 
-* Virtualbox (verificado con 6.1.28r147628)
+* Virtualbox (verificado con 6.1.28r147628) o Docker (verificado con version 19.03.12, build 48a66213fe) como provider.
 
 * Git (verificado con 2.25.1)
 
@@ -114,10 +114,14 @@ donde se ve que de manera inicial se usa la configuración para HTTPS.
 
 ```bash
 cd localenv-wordpress/
-time vagrant up
+cp Vagrantfile.virtualbox Vagrantfile ; time vagrant up      # usa Virtualbox como provider
+
+# o bien
+cp Vagrantfile.docker Vagrantfile ;  time vagrant up --provider=docker # usa Docker como provider, ej. en una Apple MAC con procesador M1
+
 ```
 
-Esto va a crear una VM con Ubuntu 20.04 llamada `wpdev` con dirección IP 192.168.56.1 en la red _host only_ de Virtualbox, lo cual permite accederla 
+El `vagrant up` va a crear una VM con Ubuntu 20.04 llamada `wpdev` con dirección IP 192.168.56.1 en la red _host only_ de Virtualbox, lo cual permite accederla 
 desde la pc o notebook que aloja el Virtualbox.
 
 Cuando la VM levanta, muestra las URLs y credenciales necesarias para el acceso de lectura del blog y para el _login_ con la cuenta privilegiada de administración.
@@ -163,3 +167,6 @@ vagrant destroy -f
 * Wordpress cache plugins:  TODO: revisar!
   * https://wordpress.org/plugins/wp-fastest-cache/
   * https://wordpress.org/plugins/wp-super-cache/
+
+* https://medium.com/nerd-for-tech/developing-on-apple-m1-silicon-with-virtual-environments-4f5f0765fd2f usa Docker en las Apple MAC con procesador M1
+
