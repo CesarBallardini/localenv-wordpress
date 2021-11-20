@@ -118,7 +118,7 @@ cp Vagrantfile.virtualbox Vagrantfile ; time vagrant up      # usa Virtualbox co
 # tarda 7min 35s en mi pc
 
 # o bien
-cp Vagrantfile.docker Vagrantfile ;  time vagrant up --provider=docker # usa Docker como provider, ej. en una Apple MAC con procesador M1
+cp Vagrantfile.docker Vagrantfile ;  time vagrant up  # usa Docker como provider, ej. en una Apple MAC con procesador M1
 # tarda 5min 20s en mi pc
 
 ```
