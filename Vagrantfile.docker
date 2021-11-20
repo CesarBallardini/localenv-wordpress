@@ -57,22 +57,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 
     # Provider for Docker
-    config.vm.provider :docker do |docker, override|
+    srv.vm.provider :docker do |docker, override|
       override.vm.box = nil
       docker.image = "rofrano/vagrant-provider:ubuntu"
       docker.remains_running = true
       docker.has_ssh = true
       docker.privileged = true
       docker.volumes = ["/sys/fs/cgroup:/sys/fs/cgroup:ro"]
-    end
-
-
-    srv.vm.provider :virtualbox do |vb|
-      vb.gui = false
-      vb.cpus = 3
-      vb.memory = "2048"
-
-      # https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvm mas parametros para personalizar en VB
     end
   end
 
