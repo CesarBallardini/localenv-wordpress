@@ -157,6 +157,8 @@ vagrant destroy -f
 * WP CLI: herramienta de administración de tipo CLI para Wordpress.
   * https://wp-cli.org/es/
   * https://developer.wordpress.org/cli/commands/
+  * https://raiolanetworks.es/blog/wp-cli/
+  * https://kinsta.com/blog/wp-cli/
 
 * https://peteris.rocks/blog/unattended-installation-of-wordpress-on-ubuntu-server/ los _scripts_ están basados en este material.
 
