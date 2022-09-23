@@ -10,13 +10,55 @@ export WP_ADMIN_EMAIL=${4:-no@spam.org}
 
 source /vagrant/provision/vars.sh
 
-instala_paquetes() {
+instala_nginx() {
 
   sudo apt-get remove --purge libapache2-mod-php apache2 apache2-data apache2-utils ${APT_OPTIONS}
-  sudo apt-get install nginx php php-mysql php-curl php-gd php-fpm apache2- ${APT_OPTIONS}
+  sudo apt-get install nginx apache2- ${APT_OPTIONS}
+}
+
+instala_php() {
+
+  sudo apt-get install software-properties-common apt-transport-https ${APT_OPTIONS}
+  LC_ALL=C.UTF-8  sudo add-apt-repository ppa:ondrej/php -y
+
+  #LC_ALL=C.UTF-8  sudo add-apt-repository ppa:ondrej/apache2 -y  # if you use apache2
+
+  #LC_ALL=C.UTF-8  sudo add-apt-repository ppa:ondrej/nginx-mainline -y
+  #LC_ALL=C.UTF-8  sudo add-apt-repository ppa:ondrej/nginx -y
+
+  sudo apt-get update && sudo apt upgrade ${APT_OPTIONS}
+
+
+  sudo apt-get install php${PHP_VERSION} \
+                       php${PHP_VERSION}-fpm \
+	               php${PHP_VERSION}-common \
+		       php${PHP_VERSION}-cli \
+		       ${APT_OPTIONS}
+
+  sudo apt-get install php${PHP_VERSION}-zip \
+	               php${PHP_VERSION}-readline \
+		       php${PHP_VERSION}-imagick \
+		       php${PHP_VERSION}-opcache \
+		       php${PHP_VERSION}-xml \
+		       php${PHP_VERSION}-curl \
+		       php${PHP_VERSION}-gd \
+		       php${PHP_VERSION}-mysql \
+		       ${APT_OPTIONS}
+}
+
+instala_letsencrypt() {
   sudo apt-get install letsencrypt ${APT_OPTIONS}
 }
 
+instala_paquetes() {
+  instala_nginx
+  instala_php
+  instala_letsencrypt
+}
+
+reinicia_php_fpm() {
+  sudo service php${PHP_VERSION}-fpm restart
+}
 
 configura_nginx_no_ssl() {
 
@@ -255,14 +297,14 @@ EOF
 instala_no_ssl() {
   instala_paquetes
   configura_nginx_no_ssl
-  sudo service php7.4-fpm restart
+  reinicia_php_fpm
 }
 
 
 instala_ssl_selfsigned() {
   instala_paquetes
   configura_nginx_ssl_selfsigned
-  sudo service php7.4-fpm restart
+  reinicia_php_fpm
 }
 
 
@@ -270,7 +312,7 @@ instala_ssl_letsencrypt() {
   instala_paquetes
   #configura_nginx_ssl_letsencrypt
   #asegura_certificado_no_se_vence
-  sudo service php7.4-fpm restart
+  reinicia_php_fpm
 }
 
 ##
