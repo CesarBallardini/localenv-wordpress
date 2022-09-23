@@ -159,6 +159,7 @@ vagrant destroy -f
   * https://developer.wordpress.org/cli/commands/
   * https://raiolanetworks.es/blog/wp-cli/
   * https://kinsta.com/blog/wp-cli/
+  * https://www.wpsysadmin.com/mantenimiento/wp-cli/
 
 * https://peteris.rocks/blog/unattended-installation-of-wordpress-on-ubuntu-server/ los _scripts_ están basados en este material.
 
