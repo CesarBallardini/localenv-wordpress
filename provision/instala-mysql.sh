@@ -17,4 +17,6 @@ mysql -u root -p$MYSQL_ROOT_PASSWORD <<EOF
 CREATE USER '$WP_DB_USERNAME'@'localhost' IDENTIFIED BY '$WP_DB_PASSWORD';
 CREATE DATABASE $WP_DB_NAME;
 GRANT ALL ON $WP_DB_NAME.* TO '$WP_DB_USERNAME'@'localhost';
+GRANT ALL ON *.* TO '$WP_DB_USERNAME'@'localhost';  -- para duplicator cuando restaura una copia
+FLUSH PRIVILEGES;
 EOF
