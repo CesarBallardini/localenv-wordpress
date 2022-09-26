@@ -29,7 +29,7 @@ instala_wordpress() {
 
   # https://wordpress.org/download/releases/
   [ -f "${WORDPRESS_FILENAME}" ] || wget "${WORDPRESS_URL}"
-  tar xf "${WORDPRESS_FILENAME}" --strip-components=1
+  tar xf "${WORDPRESS_FILENAME}" --strip-components=1 || exit 99 # si no existe la version solicitada
   #rm -f "${WORDPRESS_FILENAME}"
 
   [ -f wp-config.php ] || cp wp-config-sample.php wp-config.php
