@@ -21,8 +21,8 @@ PHP_VERSION=8.1
 
 
 # https://wordpress.org/download/releases/
-WORDPRESS_VERSION=latest
 WORDPRESS_VERSION=6.0.2
+WORDPRESS_VERSION=latest
 
 
 ##
@@ -32,6 +32,11 @@ WORDPRESS_VERSION=6.0.2
 
 
 ##
-# las versiones instaladas son:
+# versiones viejas:
 PHP_VERSION=7.4
 WORDPRESS_VERSION=5.7.7
+
+##
+# versiones especialmente solicitadas
+PHP_VERSION=8.0
+WORDPRESS_VERSION=5.9.4
